@@ -1,70 +1,16 @@
-# Getting Started with Create React App
+# TP 6 : Découverte des Hooks Avancés et des Hooks Personnalisés
+Avec ce TP, tu as appris :
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+À utiliser useReducer pour structurer l’état.
 
-## Available Scripts
+À manipuler le DOM et stocker des valeurs persistantes avec useRef.
 
-In the project directory, you can run:
+À créer et utiliser un Hook personnalisé (useFetch).
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+À gérer des effets avec nettoyage grâce à useEffect.
+<img width="634" height="562" alt="terminal" src="https://github.com/user-attachments/assets/58876fa4-a99b-4dad-9ea9-a6ad670acea6" />
+<img width="742" height="441" alt="app" src="https://github.com/user-attachments/assets/29a14184-d7f1-4e18-828c-22b03796980c" />
+<img width="938" height="518" alt="app2" src="https://github.com/user-attachments/assets/b26e4499-bc95-43fc-8669-d7a676463a11" />
+<img width="777" height="482" alt="app3" src="https://github.com/user-attachments/assets/e61c8ad3-de24-4c3d-8ac5-318b7f45d21f" />
+<img width="611" height="449" alt="app4" src="https://github.com/user-attachments/assets/1010f6cd-9553-4944-84dd-609178701de3" />
+<img width="794" height="254" alt="app5" src="https://github.com/user-attachments/assets/14dfdb12-8727-46af-8264-8caa3bd7305b" />
