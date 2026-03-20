@@ -9,8 +9,7 @@ import HorlogeMondiale from './HorlogeMondiale';
 import './App.css';
 
 function App() {
-  // FR:......... État pour afficher ou\\\\\\\\\\ cacher tous les composants
-  // EN: State to show or hide all components....... hafsa fst sir 
+  // State to show or hide all components / État pour afficher ou cacher tous les composants
   const [afficherComposants, setAfficherComposants] = useState(true);
 
   return (
@@ -19,7 +18,7 @@ function App() {
         TP Hooks Personnalise
       </h1>
       
-      {/* FR:''''''''' Bouton global pour afficher/cacher . hafsa fst sir */}
+      {/* Global button to show/hide / Bouton global pour afficher/cacher */}
       <button 
         onClick={() => setAfficherComposants(!afficherComposants)}
         style={{ 
@@ -35,7 +34,7 @@ function App() {
         {afficherComposants ? 'Cacher' : 'Afficher'} les composants
       </button>
 
-      {/* FR: Affichage ......conditionnel de tous....... les composants */}
+      {/* Conditional display of all components / Affichage conditionnel de tous les composants */}
       {afficherComposants && (
         <>
           <GestionnaireTaches />
