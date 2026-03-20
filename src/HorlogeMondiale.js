@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 function HorlogeMondiale() {
-  // FR: Liste des villes avec leurs décalages UTC
-  // EN: List of cities with their UTC offsets
+  // List of cities with their UTC offsets / Liste des villes avec leurs décalages UTC
   const [villes, setVilles] = useState([
     { nom: 'Paris', decalage: 1 },
     { nom: 'Londres', decalage: 0 },
@@ -14,21 +13,19 @@ function HorlogeMondiale() {
     { nom: 'Pekin', decalage: 8 }
   ]);
 
-  const [heures, setHeures] = useState({});        // FR: Stocke les heures pour chaque ville
-  const [villeRecherche, setVilleRecherche] = useState(''); // FR: Input pour nouvelle ville
-  const [nouveauDecalage, setNouveauDecalage] = useState(0); // FR: Décalage pour nouvelle ville
-  const [format24h, setFormat24h] = useState(true); // FR: Format 12h/24h
+  const [heures, setHeures] = useState({});        // Stores times for each city / Stocke les heures pour chaque ville
+  const [villeRecherche, setVilleRecherche] = useState(''); // Input for new city / Input pour nouvelle ville
+  const [nouveauDecalage, setNouveauDecalage] = useState(0); // Offset for new city / Décalage pour nouvelle ville
+  const [format24h, setFormat24h] = useState(true); // 12h/24h format / Format 12h/24h
 
-  // FR: Mise à jour des heures chaque seconde
-  // EN: Update times every second
+  // Update times every second / Mise à jour des heures chaque seconde
   useEffect(() => {
     const mettreAJourHeures = () => {
       const maintenant = new Date();
       const nouvellesHeures = {};
       
       villes.forEach(ville => {
-        // FR: Calcul de l'heure locale basée sur le décalage UTC
-        // EN: Calculate local time based on UTC offset
+        // Calculate local time based on UTC offset / Calcul de l'heure locale basée sur le décalage UTC
         const utc = maintenant.getTime() + (maintenant.getTimezoneOffset() * 60000);
         const heureLocale = new Date(utc + (3600000 * ville.decalage));
         
@@ -42,14 +39,13 @@ function HorlogeMondiale() {
       setHeures(nouvellesHeures);
     };
 
-    mettreAJourHeures(); // FR: Mise à jour immédiate | EN: Immediate update
-    const interval = setInterval(mettreAJourHeures, 1000); // FR: Puis chaque seconde
+    mettreAJourHeures(); // Immediate update / Mise à jour immédiate
+    const interval = setInterval(mettreAJourHeures, 1000); // Then every second / Puis chaque seconde
 
-    return () => clearInterval(interval); // FR:;;;;;[[[[[[[[]]]]]]]] Nettoyage à la destruction
+    return () => clearInterval(interval); // Cleanup on unmount / Nettoyage à la destruction
   }, [villes]);
 
-  // FR: Ajouter une nouvelle ville\\\\\\\///////
-  // EN: Add a new city\\\\\\\////////
+  // Add a new city / Ajouter une nouvelle ville
   const ajouterVille = () => {
     if (villeRecherche.trim() && !villes.find(v => v.nom.toLowerCase() === villeRecherche.toLowerCase())) {
       setVilles([...villes, { nom: villeRecherche, decalage: parseInt(nouveauDecalage) || 0 }]);
@@ -58,14 +54,12 @@ function HorlogeMondiale() {
     }
   };
 
-  // FR: Supprimer une ville0--=====
-  // EN: Delete a city====--00000
+  // Delete a city / Supprimer une ville
   const supprimerVille = (nomVille) => {
     setVilles(villes.filter(v => v.nom !== nomVille));
   };
 
-  // FR: Formater l'heure selon le choix 12h/24h
-  // EN: Format time according to 12h/24h choice............
+  // Format time according to 12h/24h choice / Formater l'heure selon le choix 12h/24h
   const formaterHeure = (heures, minutes, secondes) => {
     if (format24h) {
       return `${heures.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secondes.toString().padStart(2, '0')}`;
@@ -80,14 +74,14 @@ function HorlogeMondiale() {
     <div style={{ padding: '20px', border: '2px solid brown', marginBottom: '20px' }}>
       <h3>Horloge Mondiale</h3>
       
-      {/* FR: Bouton de changement de format     hafsaa fst sir ,,...*/}
+      {/* Format toggle button / Bouton de changement de format */}
       <div style={{ marginBottom: '15px' }}>
         <button onClick={() => setFormat24h(!format24h)}>
           Format: {format24h ? '24h' : '12h'}
         </button>
       </div>
 
-      {/* FR: Formulaire d'ajout de ville,,,,,,......./////// */}
+      {/* Add city form / Formulaire d'ajout de ville */}
       <div style={{ marginBottom: '20px' }}>
         <h4>Ajouter une ville:</h4>
         <input
@@ -107,7 +101,7 @@ function HorlogeMondiale() {
         </button>
       </div>
 
-      {/* FR: Grille d'affichage des horloges */}
+      {/* Clocks display grid / Grille d'affichage des horloges */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '10px' }}>
         {villes.map((ville) => (
           <div key={ville.nom} style={{ 
