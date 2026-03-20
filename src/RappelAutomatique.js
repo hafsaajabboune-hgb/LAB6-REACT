@@ -5,26 +5,22 @@ function RappelAutomatique() {
   const [secondesRestantes, setSecondesRestantes] = useState(5);
   const [rappelActif, setRappelActif] = useState(false);
 
-  // FR: Gestion du minuteur avec nettoyage automatique
-  // EN: Timer management with automatic cleanup
+  // Timer management with automatic cleanup / Gestion du minuteur avec nettoyage automatique
   useEffect(() => {
     let minuteur;
 
     if (rappelActif && secondesRestantes > 0) {
-      // FR: Création de l'intervalle si le rappel est actif
-      // EN: Create interval if reminder is active
+      // Create interval if reminder is active / Création de l'intervalle si le rappel est actif
       minuteur = setInterval(() => {
         setSecondesRestantes(s => s - 1);
       }, 1000);
     } else if (secondesRestantes === 0) {
-      // FR: Déclenchement du rappel
-      // EN: Trigger reminder
+      // Trigger reminder / Déclenchement du rappel
       setMessage("C'est l'heure de faire une pause!");
       setRappelActif(false);
     }
 
-    // FR:;;;;;;;;;;;;;; Fonction de nettoyage (cruciale pour éviter les fuites mémoire)
-    // EN: Cleanup function (crucial to avoid memory leaks)
+    // Cleanup function (crucial to avoid memory leaks) / Fonction de nettoyage (cruciale pour éviter les fuites mémoire)
     return () => {
       if (minuteur) {
         clearInterval(minuteur);
