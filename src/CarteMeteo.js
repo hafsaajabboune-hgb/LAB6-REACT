@@ -2,24 +2,21 @@ import React, { useState } from 'react';
 import useDonneesMeteo from './useDonneesMeteo';
 
 function CarteMeteo() {
-  // FR: États pour la recherche de ville
-  // EN: States for city search
+  // States for city search / États pour la recherche de ville
   const [villeRecherchee, setVilleRecherchee] = useState('Casablanca');
   const [inputVille, setInputVille] = useState('');
   
-  // FR: Utilisation du hook personnalisé
-  // EN: Using the custom hook
+  // Using the custom hook / Utilisation du hook personnalisé
   const { infos, enChargement, probleme } = useDonneesMeteo(villeRecherchee);
 
-  // FR: Liste des villes populaires pour raccourcis
-  // EN: Popular cities list for shortcuts
+  // Popular cities list for shortcuts / Liste des villes populaires pour raccourcis
   const villesPopulaires = ['Paris', 'Londres', 'Casablanca', 'New York'];
 
   return (
     <div style={{ padding: '20px', border: '2px solid teal', marginBottom: '20px' }}>
       <h3>Application Meteo</h3>
       
-      {/* FR: Barre de recherche | EN: Search bar */}
+      {/* Search bar / Barre de recherche */}
       <div>
         <input
           value={inputVille}
@@ -31,7 +28,7 @@ function CarteMeteo() {
         </button>
       </div>
 
-      {/* FR: Raccourcis villes populaires | EN: Popular cities shortcuts */}
+      {/* Popular cities shortcuts / Raccourcis villes populaires */}
       <div style={{ marginTop: '10px' }}>
         {villesPopulaires.map(ville => (
           <button 
@@ -47,7 +44,7 @@ function CarteMeteo() {
         ))}
       </div>
 
-      {/* FR: Affichage conditionnel des données | EN: Conditional data display */}
+      {/* Conditional data display / Affichage conditionnel des données */}
       <div style={{ marginTop: '20px' }}>
         {enChargement && <p>Chargement des donnees...</p>}
         {probleme && <p style={{color: 'red'}}>{probleme}</p>}
