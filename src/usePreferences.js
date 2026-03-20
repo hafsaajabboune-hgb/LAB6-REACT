@@ -1,17 +1,12 @@
 import { useState, useEffect } from 'react';
 
-// FR: Hook personnalisé pour gérer les préférences dans localStorage
-// EN: Custom hook to manage preferences in localStorage
-// AR: خطاف مخصص لإدارة التفضيلات في التخزين المحلي
-// ES: Hook personalizado para gestionar preferencias en localStorage
+// Custom hook to manage preferences in localStorage / Hook personnalisé pour gérer les préférences dans localStorage
 function usePreferences(nomPreference, valeurParDefaut) {
-  // FR: Initialisation de l'état avec la valeur du localStorage ou la valeur par défaut
-  // EN: State initialization with localStorage value or default value
+  // State initialization with localStorage value or default value / Initialisation de l'état avec la valeur du localStorage ou la valeur par défaut
   const [preference, setPreference] = useState(() => {
     try {
       const valeurStockee = localStorage.getItem(nomPreference);
-      // FR: Retourne la valeur stockée ou la valeur par défaut
-      // EN: Return stored value or default value
+      // Return stored value or default value / Retourne la valeur stockée ou la valeur par défaut
       return valeurStockee ? JSON.parse(valeurStockee) : valeurParDefaut;
     } catch (error) {
       console.log('Erreur de lecture localStorage');
@@ -19,8 +14,7 @@ function usePreferences(nomPreference, valeurParDefaut) {
     }
   });
 
-  // FR:,,,,,,,,, Sauvegarde automatique dans localStorage quand la préférence change
-  // EN: Auto-save..////////// to localStorage when preference changes
+  // Auto-save to localStorage when preference changes / Sauvegarde automatique dans localStorage quand la préférence change
   useEffect(() => {
     try {
       localStorage.setItem(nomPreference, JSON.stringify(preference));
@@ -28,10 +22,9 @@ function usePreferences(nomPreference, valeurParDefaut) {
     } catch (error) {
       console.log('Erreur de sauvegarde localStorage');
     }
-  }, [nomPreference, preference]); // FR: Dépendances | EN: Dependencies
+  }, [nomPreference, preference]); // Dependencies / Dépendances
 
-  // FR: Retourne la valeur et le setter (comme useState)...///,,,,,,
-  // EN: Return value and setter (like useState)
+  // Return value and setter (like useState) / Retourne la valeur et le setter (comme useState)
   return [preference, setPreference];
 }
 
