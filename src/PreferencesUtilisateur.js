@@ -2,14 +2,12 @@ import React, { useEffect } from 'react';
 import usePreferences from './usePreferences';
 
 function PreferencesUtilisateur() {
-  // FR: Utilisation du hook personnalisé pour différentes préférences
-  // EN: Using custom hook for different preferences
+  // Using custom hook for different preferences / Utilisation du hook personnalisé pour différentes préférences
   const [theme, setTheme] = usePreferences('theme', 'clair');
   const [langue, setLangue] = usePreferences('langue', 'francais');
   const [taillePolice, setTaillePolice] = usePreferences('taillePolice', 'moyenne');
 
-  // FR: Application du thème au body du document
-  // EN: Apply theme to document body
+  // Apply theme to document body / Application du thème au body du document
   const appliquerTheme = () => {
     const couleurs = {
       clair: { bg: '#ffffff', text: '#000000' },
@@ -22,8 +20,7 @@ function PreferencesUtilisateur() {
     document.body.style.color = themeActuel.text;
   };
 
-  // FR: Application de la taille de police
-  // EN: Apply font size
+  // Apply font size / Application de la taille de police
   const appliquerTaillePolice = () => {
     const tailles = {
       petite: '12px',
@@ -33,8 +30,7 @@ function PreferencesUtilisateur() {
     document.body.style.fontSize = tailles[taillePolice];
   };
 
-  // FR: Effet pour appliquer les changements quand les préférences changent
-  // EN: Effect to apply changes when preferences change
+  // Effect to apply changes when preferences change / Effet pour appliquer les changements quand les préférences changent
   useEffect(() => {
     appliquerTheme();
     appliquerTaillePolice();
@@ -44,7 +40,7 @@ function PreferencesUtilisateur() {
     <div style={{ padding: '20px', border: '2px solid green', marginBottom: '20px' }}>
       <h3>Preferences Utilisateur</h3>
       
-      {/* FR: Section Thème | EN: Theme Section */}
+      {/* Theme Section / Section Thème */}
       <div style={{ marginBottom: '15px' }}>
         <h4>Theme:</h4>
         <button onClick={() => setTheme('clair')} style={{ marginRight: '5px' }}>
@@ -59,7 +55,7 @@ function PreferencesUtilisateur() {
         <p>Theme actuel: {theme}</p>
       </div>
 
-      {/* FR: Section Langue | EN: Language Section */}
+      {/* Language Section / Section Langue */}
       <div style={{ marginBottom: '15px' }}>
         <h4>Langue:</h4>
         <button onClick={() => setLangue('francais')} style={{ marginRight: '5px' }}>
@@ -74,7 +70,7 @@ function PreferencesUtilisateur() {
         <p>Langue actuelle: {langue}</p>
       </div>
 
-      {/* FR: Section Taille de police | EN: Font Size Section */}
+      {/* Font Size Section / Section Taille de police */}
       <div style={{ marginBottom: '15px' }}>
         <h4>Taille de police:</h4>
         <button onClick={() => setTaillePolice('petite')} style={{ marginRight: '5px' }}>
@@ -89,7 +85,7 @@ function PreferencesUtilisateur() {
         <p>Taille actuelle: {taillePolice}</p>
       </div>
 
-      {/* FR: ,,,,,,,,,,\\\\\\\Information sur le localStorage | EN: localStorage info */}
+      {/* localStorage info / Information sur le localStorage */}
       <div style={{ marginTop: '20px', padding: '10px', border: '1px dashed gray' }}>
         <p>Les preferences sont sauvegardees dans localStorage</p>
         <p>Ouvrez les outils developpeur - Application - Storage - Local Storage</p>
